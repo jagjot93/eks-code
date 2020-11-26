@@ -11,6 +11,6 @@ variable "public_cidr" {
 }
 
 variable "cidr_range" {
-  type = "string"
+  type = "list"
 }
 
