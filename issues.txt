@@ -1,0 +1,2 @@
+1. Not able to add tags on subnets
+2. Not able to give subnet list in eks

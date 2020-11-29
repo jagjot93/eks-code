@@ -1,5 +1,5 @@
 resource "aws_eks_cluster" "eks" {
-  name = "${var.eks_name[0]}"
+  name = "test"
   role_arn = aws_iam_role.cluster_role.arn
   version = 1.17
 
@@ -10,11 +10,11 @@ resource "aws_eks_cluster" "eks" {
   vpc_config {
    endpoint_private_access = true
    endpoint_public_access = true
-#   public_access_cidrs = "0.0.0.0/0"
+   public_access_cidr = "0.0.0.0/0"
 
-#   count = "${length(aws_subnet.private)}"
-#   count1 = "${length(aws_subnet.public)}"
-   subnet_ids = [aws_subnet.private[0].id, aws_subnet.private[1].id, aws_subnet.public[0].id, aws_subnet.public[1].id]
+   count = "${length(aws_subnet.private)}"
+   count1 = "${length(aws_subnet.public)}"
+   subnet_ids = [aws_subnet.private[count.index].id, aws_subnet.public[count1.index].id]
   }
 }
 

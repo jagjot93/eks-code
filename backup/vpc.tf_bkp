@@ -20,9 +20,8 @@ resource "aws_subnet" "private" {
   cidr_block = "${var.private_cidr[count.index]}"
 
   tags = {
-    Name = "private_subnet",
-#    kubernetes.io/cluster/${var.eks_name} = "shared"
-    "kubernetes.io/cluster/test" = "shared"
+    Name = "private_subnet"
+    kubernetes.io/cluster/${var.eks_name} = "shared"
   }
 }
 

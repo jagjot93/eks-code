@@ -14,3 +14,14 @@ variable "cidr_range" {
   type = "list"
 }
 
+variable "ssh_key" {
+  type = "list"
+}
+
+variable "ingress_sg_id" {
+  type = "list"
+}
+
+variable "eks_name" {
+  type = "list"
+}
