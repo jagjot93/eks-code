@@ -33,3 +33,11 @@ variable "private_subnet_tags" {
 variable "public_subnet_tags" {
   type = "map"
 }
+
+variable "private_subnet_az" {
+  type = "list"
+}
+
+variable "public_subnet_az" {
+  type = "list"
+|

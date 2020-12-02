@@ -16,3 +16,7 @@ public_subnet_tags = {
   Name = "Public Subnet"
   "kubernetes.io/cluster/test" = "shared"
 }
+
+private_subnet_az = [ "us-east-1a", "us-east-1b" ]
+
+public_subnet_az = [ "us-east-1c", "us-east-1d" ]
