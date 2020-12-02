@@ -6,3 +6,13 @@ cidr_range = [ "10.0.0.0/16"]
 ssh_key = [ "terraform" ]
 ingress_sg_id = [ "sg-0087eb4d45761163b" ]
 eks_name = [ "test" ]
+
+private_subnet_tags = {
+  Name = "Private Subnet"
+  "kubernetes.io/cluster/test" = "shared"
+}
+
+public_subnet_tags = {
+  Name = "Public Subnet"
+  "kubernetes.io/cluster/test" = "shared"
+}

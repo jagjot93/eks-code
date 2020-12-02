@@ -19,11 +19,11 @@ resource "aws_subnet" "private" {
   count      = "${length(var.private_cidr)}"
   cidr_block = "${var.private_cidr[count.index]}"
 
-  tags = {
-    Name = "private_subnet",
+  tags = var.private_subnet_tags
+#    Name = "private_subnet",
 #    kubernetes.io/cluster/${var.eks_name} = "shared"
-    "kubernetes.io/cluster/test" = "shared"
-  }
+#    "kubernetes.io/cluster/test" = "shared"
+#  }
 }
 
 resource "aws_subnet" "public" {
@@ -32,9 +32,9 @@ resource "aws_subnet" "public" {
   cidr_block = "${var.public_cidr[count.index]}"
   map_public_ip_on_launch = true
 
-  tags = {
-    Name = "public_subnet"
-  }
+  tags = var.public_subnet_tags
+#    Name = "public_subnet"
+#  }
 }
 
 resource "aws_eip" "myeip" {

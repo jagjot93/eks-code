@@ -25,3 +25,11 @@ variable "ingress_sg_id" {
 variable "eks_name" {
   type = "list"
 }
+
+variable "private_subnet_tags" {
+  type = "map"
+}
+
+variable "public_subnet_tags" {
+  type = "map"
+}
