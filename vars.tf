@@ -40,4 +40,4 @@ variable "private_subnet_az" {
 
 variable "public_subnet_az" {
   type = "list"
-|
+}
